@@ -12,6 +12,7 @@ module.exports = {
       "@pages": path.resolve("src/pages"),
       "@router": path.resolve("src/router"),
       "@examples": path.resolve("src/examples"),
+      "@assets": path.resolve("src/assets"),
     }
   },
   plugins: [
