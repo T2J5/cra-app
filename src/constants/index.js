@@ -1,5 +1,7 @@
 import * as actionType from './actionType'
 import * as base from './base'
 
-export default { ...actionType, ...base }
+const at = { ...actionType, ...base }
+
+export default at
 

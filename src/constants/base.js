@@ -8,6 +8,7 @@ export const BASIC_API = 'http://v.juhe.cn/';
 // api key
 export const JU_HE_KEY = {
   'toutiao': '4baa1e9bd82d8159838ea892dfdad3b6',
+  'weather': '5b43aea6dee3882149bf4a844c858fff',
 }
 
 // env

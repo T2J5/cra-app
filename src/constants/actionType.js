@@ -7,3 +7,6 @@ export const INCREASYNC = 'INCREASYNC'
 
 // news
 export const FETCH_NEWS_DATA = 'FETCH_NEWS_DATA'
+
+// WEATHER
+export const FETCH_WEATHER_DATA = 'FETCH_WEATHER_DATA'

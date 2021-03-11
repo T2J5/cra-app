@@ -1,5 +1,8 @@
 import axios from 'axios'
-import at from '@constants'
+// import at from '@constants'
+import Cache from '../cache'
+
+const cache = new Cache()
 
 const service = axios.create({
   baseURL: '/api', // 和craco.config.js中pathRewrite 匹配
@@ -33,6 +36,7 @@ service.interceptors.response.use(
     if (parseInt(res.code) === 404) {
       return Promise.reject('error')
     } else {
+      cache.set(response.request.responseURL, res)
       return Promise.resolve(res)
     }
   },

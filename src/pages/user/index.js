@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const User = () => {
-  return <div>用户</div>
+  return <div>
+    <div>111</div>
+    <div>
+      天气结果
+    </div>
+  </div>
 }
 
 export default User

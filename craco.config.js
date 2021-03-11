@@ -15,6 +15,7 @@ module.exports = {
       "@assets": path.resolve("src/assets"),
       "@services": path.resolve("src/services"),
       "@actions": path.resolve("src/actions"),
+      "@cache": path.resolve("src/cache"),
     }
   },
   plugins: [
@@ -46,15 +47,16 @@ module.exports = {
   //配置代理解决跨域
   devServer: {
     proxy: {
-        "/api": {
-            target: "http://v.juhe.cn",  
-            //target: 'http://192.168.9.19:8080',
-            changeOrigin: true,
-            pathRewrite: {
-              // 替换target中的请求地址，也就是说以后你在请求http://v.juhe.cn这个地址的时候直接写成/api即可。
-                "^/api": ""
-            }
+      "/api": {
+        target: "http://apis.juhe.cn",
+        // target: "http://v.juhe.cn",
+        //target: 'http://192.168.9.19:8080',
+        changeOrigin: true,
+        pathRewrite: {
+          // 替换target中的请求地址，也就是说以后你在请求http://v.juhe.cn这个地址的时候直接写成/api即可。
+            "^/api": ""
         }
+      },
     }
   },
   
