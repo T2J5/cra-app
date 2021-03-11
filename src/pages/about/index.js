@@ -1,16 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { type } from '@utils/common.js'
-import { connect } from 'react-redux'
-import at from '@constants'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchTouTiaoAction } from '@actions/news'
 import './index.less'
 
-const About = () => {
-  console.log('constants', at)
+const About = (props = {}) => {
+
+  const [type, setType] = useState('')
+  const news = useSelector(state => state.news)
+  const dispatch = useDispatch()
+
+  const fetchData = () => {
+    dispatch(fetchTouTiaoAction({ type }))
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [dispatch, type]);
+
+  const changeType = (val) => {
+    setType(val)
+  }
+
   return <div className='container'>
-    <button className='btn'>详情页</button>
-    <button className='btn btn1' onClick={() => alert('TJ')}>
-      TJ
+    <button className='btn' onClick={() => changeType('keji')}>
+      科技
+    </button>
+    <button className='btn btn1' onClick={() => changeType('top')}>
+      头条
     </button>
     <button className='btn btn2'>
       <Link to='/'>Home</Link>

@@ -13,6 +13,8 @@ module.exports = {
       "@router": path.resolve("src/router"),
       "@examples": path.resolve("src/examples"),
       "@assets": path.resolve("src/assets"),
+      "@services": path.resolve("src/services"),
+      "@actions": path.resolve("src/actions"),
     }
   },
   plugins: [
@@ -45,10 +47,11 @@ module.exports = {
   devServer: {
     proxy: {
         "/api": {
-            target: "http://baidu.com",  
+            target: "http://v.juhe.cn",  
             //target: 'http://192.168.9.19:8080',
             changeOrigin: true,
             pathRewrite: {
+              // 替换target中的请求地址，也就是说以后你在请求http://v.juhe.cn这个地址的时候直接写成/api即可。
                 "^/api": ""
             }
         }

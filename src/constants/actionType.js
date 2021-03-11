@@ -4,3 +4,6 @@ export const FETCH_USER_INFO = 'FETCH_USER_INFO'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 export const INCREASYNC = 'INCREASYNC'
+
+// news
+export const FETCH_NEWS_DATA = 'FETCH_NEWS_DATA'

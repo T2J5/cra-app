@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import user from './user';
-import count from './count';
+import news from './news';
 
 export default combineReducers({
   user,
-  count
+  news,
 });
