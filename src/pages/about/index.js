@@ -16,13 +16,16 @@ const About = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      dispatch(fetchTouTiaoAction({ type }))
+      // dispatch(fetchTouTiaoAction({ type }))
     }
-    fetchData();
+    // fetchData();
   }, [dispatch, type]);
 
   const changeType = (val) => {
-    setType(val)
+    // setType(val)
+    if(val === 'biaobai') {
+      window.location.href = 'http://www.biaobaishike.com/web.php?id=A23BeAz';
+    }
   }
 
   // const renderArticle = (article) => {
@@ -40,18 +43,18 @@ const About = () => {
   const data = get(news, 'data.data') || []
   return <div className='container'>
     <div className='header'>
-      <button className='btn' onClick={() => changeType('keji')}>
-        科技
+      <button className='btn' onClick={() => changeType('shengri')}>
+        生日
       </button>
-      <button className='btn btn1' onClick={() => changeType('top')}>
-        头条
+      <button className='btn btn1' onClick={() => changeType('biaobai')}>
+        表白
       </button>
-      <button className='btn btn2'>
+      {/* <button className='btn btn2'>
         <Link to='/'>Home</Link>
       </button>
       <button className='btn btn3'>
         <Link to='/user'>User</Link>
-      </button>
+      </button> */}
     </div>
     
     <div className='article-container'>
