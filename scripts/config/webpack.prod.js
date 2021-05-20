@@ -11,7 +11,6 @@ const { PROJECT_PATH } = require('../constant')
 
 module.exports = merge(common, {
   mode: 'production',
-  target: 'browserslist',
   devtool: false,
   output: {
     filename: 'js/[name].[contenthash:8].js',

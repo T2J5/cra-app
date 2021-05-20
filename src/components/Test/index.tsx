@@ -1,4 +1,3 @@
-// src/components/Test/tsx
 import React from 'react'
 
 interface ITestProps {

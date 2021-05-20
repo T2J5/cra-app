@@ -17,7 +17,15 @@
     "paths"            : {								  // 路径映射，与 baseUrl 关联
       "src/*"       : ["src/*"],
       "components/*": ["src/components/*"],
-      "utils/*"     : ["src/utils/*"]
+      "utils/*"     : ["src/utils/*"],
+      "pages/*"     : ["src/pages/*"],
+      "actions/*"   : ["src/actions/*"],
+      "assets/*"    : ["src/assets/*"],
+      "services/*"  : ["src/services/*"],
+      "app/*"  : ["src/app/*"],
+      "reducer/*"  : ["src/reducer/*"],
+      "features/*"  : ["src/features/*"],
+      "api/*"  : ["src/api/*"],
     },
 
     // 实验性选项
@@ -30,5 +38,6 @@
     "allowSyntheticDefaultImports"    : true,   // 允许从没有设置默认导出的模块中默认导入
     "noEmit"                          : true    // 只想使用tsc的类型检查作为函数时（当其他工具（例如Babel实际编译）时）使用它
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/index.js", "src/App.js"]
 }

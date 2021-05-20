@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const { isDevelopment, isProduction } = require('./env')
 const { PROJECT_PATH } = require('../constant')
 
@@ -111,7 +112,16 @@ module.exports = {
     alias: {
       'src': path.resolve(PROJECT_PATH, './src'),
       'components': path.resolve(PROJECT_PATH, './src/components'),
+      'pages': path.resolve(PROJECT_PATH, './src/pages'),
       'utils': path.resolve(PROJECT_PATH, './src/utils'),
+      'actions': path.resolve(PROJECT_PATH, './src/actions'),
+      'assets': path.resolve(PROJECT_PATH, './src/assets'),
+      'services': path.resolve(PROJECT_PATH, './src/services'),
+      'store': path.resolve(PROJECT_PATH, './src/store'),
+      'reducer': path.resolve(PROJECT_PATH, './src/reducer'),
+      'features': path.resolve(PROJECT_PATH, './src/features'),
+      'app': path.resolve(PROJECT_PATH, './src/app'),
+      'api': path.resolve(PROJECT_PATH, './src/api'),
     },
     extensions: ['.tsx', '.ts', '.js', '.json'],
   },
@@ -144,5 +154,8 @@ module.exports = {
       ],
     }),
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
   ]
 }
