@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Redirect } from 'react-router-dom'
 import RootLayout from 'components/layout/RootLayout'
+import PaymentComponent from '../features/payment'
 
 // Suspense 让组件“等待”某个异步操作，直到该异步操作结束即可渲染
 // fallback 组件处于加载状态时显示
@@ -47,6 +48,12 @@ const Router = [
             exact: true,
             key: 'weather',
             // component: SuspenseComponent(WeatherComponent)
+          },
+          {
+            path: '/payment',
+            exact: true,
+            key: 'payment',
+            component: PaymentComponent
           }
         ]
       }
